@@ -49,6 +49,8 @@ class Point(object):
         self.x = x
         self.y = y
         self.moves = 0
+        self.start_x = x
+        self.start_y = y
 
     def __repr__(self):
         return 'Point(%r, %r)' %(self.x, self.y)   # had to look up how to combine string with ints online
@@ -71,6 +73,10 @@ class Point(object):
 
     def get_distance_from(self, point):
         return math.sqrt((point.x - self.x) ** 2 + (point.y - self.y) ** 2)
+
+    def get_distance_from_start(self):
+        return math.sqrt((self.x - self.start_x) ** 2 + (self.y - self.start_y) ** 2)
+
 
 
 ########################################################################
@@ -807,7 +813,7 @@ def run_test_get_distance_from_start():
         print('Actually is:', p2.get_distance_from_start())
     """
     # ------------------------------------------------------------------
-    # TODO: 10.  Follow the same instructions as in TO-DO 3 above,
+    # DONE: 10.  Follow the same instructions as in TO-DO 3 above,
     #    but for the  get_distance_from_START  method specified above.
     # ------------------------------------------------------------------
     print()
@@ -815,6 +821,36 @@ def run_test_get_distance_from_start():
     print('Testing the   get_distance_from_START   method')
     print('of the Point class.')
     print('-----------------------------------------------------------')
+
+    p1 = Point(20, 30)
+    p1.move_to(111, 222)
+    p1.move_by(10, 20)
+    p1.move_to(0, 0)
+    p1.move_to(21, 31)
+    print()
+    print('p1 from start to (21, 31), should be about 1.414')
+    print('Actually is:', p1.get_distance_from_start())
+
+    p1.move_by(29, 39)
+    print()
+    print('p1 from start to (50, 70), should be about 50.0')
+    print('Actually is:', p1.get_distance_from_start())
+
+    p2 = Point(1, 1)
+    print()
+    print('p2 from start to (1, 1), should be about 0.0')
+    print('Actually is:', p2.get_distance_from_start())
+
+    p2.move_to(11, 1)
+    print()
+    print('p2 from start to (11, 1), should be about 10.0')
+    print('Actually is:', p2.get_distance_from_start())
+
+    p2.move_to(999, 999)
+    p2.move_to(1, 1)
+    print()
+    print('p2 from start to (1, 1), should be about 0.0')
+    print('Actually is:', p2.get_distance_from_start())
 
 
 def run_test_get_distance_traveled():
