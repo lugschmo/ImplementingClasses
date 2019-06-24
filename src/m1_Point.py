@@ -3,8 +3,8 @@ A simple   Point   class.
 NOTE: This is NOT rosegraphics -- it is your OWN Point class.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Mitch Lugsch.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -27,7 +27,7 @@ def main():
 ########################################################################
 
 # ----------------------------------------------------------------------
-# TODO: 2. With your instructor, READ THE INSTRUCTIONS
+# DONE: 2. With your instructor, READ THE INSTRUCTIONS
 #   in file  m0_INSTRUCTIONS.txt, asking questions as needed.
 #
 #   Then implement a class called   Point   that has NO METHODS yet,
@@ -38,6 +38,12 @@ def main():
 #
 #   Run the program and correct any syntax (notational) errors.
 # ----------------------------------------------------------------------
+
+
+class Point(object):
+    """ Objects are individual points in a plane with x and y coordinates. """
+    pass
+
 
 ########################################################################
 # NOTE: For ALL of the methods that you implement, the method is allowed
