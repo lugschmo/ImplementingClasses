@@ -42,7 +42,10 @@ def main():
 
 class Point(object):
     """ Objects are individual points in a plane with x and y coordinates. """
-    pass
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
 
 ########################################################################
@@ -98,7 +101,7 @@ def run_test_init():
         print('Actual for p2:  ', p2.x, p2.y)
     """
     # ------------------------------------------------------------------
-    # TODO: 3.
+    # DONE: 3.
     #   a. Read the above specification of the   __init__   method.
     #        Do NOT proceed until you understand WHAT it should do
     #        (but not necessarily HOW it will do it).
@@ -127,6 +130,25 @@ def run_test_init():
     print('-----------------------------------------------------------')
     print('Testing the   __init__   method of the Point class.')
     print('-----------------------------------------------------------')
+
+    p1 = Point(30, 18)
+    print()
+    print('Expected for p1: 30 18')
+    print('Actual for p1:  ', p1.x, p1.y)
+
+    p2 = Point(100, -40)
+    print()
+    print('Expected for p2: 100 -40')
+    print('Actual for p2:  ', p2.x, p2.y)
+    print('Expected for p1: 30 18')
+    print('Actual for p1:  ', p1.x, p1.y)
+
+    p1.y = 999
+    print()
+    print('Expected for p1: 30 999')
+    print('Actual for p1:  ', p1.x, p1.y)
+    print('Expected for p2: 100 -40')
+    print('Actual for p2:  ', p2.x, p2.y)
 
 
 def run_test_repr():
